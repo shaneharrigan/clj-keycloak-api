@@ -1,0 +1,27 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        buddy/buddy-auth {:mvn/version "3.0.323"}
+        keycloak-clojure/keycloak-clojure {:mvn/version "1.30.7"}
+        compojure/compojure {:mvn/version "1.7.1"}
+        metosin/reitit-ring {:mvn/version "0.7.0-alpha7"}
+        metosin/reitit-middleware {:mvn/version "0.7.0-alpha7"}
+        metosin/reitit-schema {:mvn/version "0.7.0-alpha7"}
+        metosin/reitit-spec {:mvn/version "0.7.0-alpha7"}
+        io.pedestal/pedestal.service {:mvn/version "0.6.3"}
+        http-kit/http-kit {:mvn/version "2.8.0-RC1"}
+        io.pedestal/pedestal.interceptor {:mvn/version "0.6.3"}
+        ring/ring-core {:mvn/version "1.11.0"}
+        ring/ring-defaults {:mvn/version "0.4.0"}
+        ring/ring-jetty-adapter {:mvn/version "1.11.0"}}
+ :aliases
+ {:run-m {:main-opts ["-m" "mycljapp.mycljapp"]}
+  :run-x {:ns-default mycljapp.mycljapp
+          :exec-fn start
+          :exec-args {:name "Clojure"}}
+  :build {:deps {io.github.clojure/tools.build
+                 {:mvn/version "0.9.6"}}
+          :ns-default build}
+  :test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "1.1.1"}
+                      io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}}}}

@@ -1,0 +1,1 @@
+A simple Clojure pedestal API server which is guarded with keycloak JWTs.
